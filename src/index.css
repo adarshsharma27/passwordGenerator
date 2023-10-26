@@ -70,7 +70,7 @@ p {
   align-items: center;
 }
 
-.checkbox-selector span {
+.checkbox-selector label {
   font-size: 1rem;
   color: #fafafa;
   padding: 10px;
@@ -114,6 +114,7 @@ p {
   content: "";
   top: 15px;
   right: 15px;
+  cursor: pointer;
 }
 
 input[type="text"] {
