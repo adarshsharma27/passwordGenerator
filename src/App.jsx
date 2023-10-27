@@ -42,7 +42,7 @@ function App() {
     generatePassword();
   }, []);
   const copyToClipboard = () => {
-    const audio= new Audio("../public/audio.wav");
+    const audio= new Audio("../audio.wav");
     audio.play();
     setCopyPassword(true);
     ref.current.select();
