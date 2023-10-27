@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, useId } from "react";
+import { useEffect, useRef, useState, useId, useCallback } from "react";
 import { FiArrowRight } from "react-icons/fi";
 import { FaRegCopy } from "react-icons/fa";
 import { FaClipboard } from "react-icons/fa6";
@@ -13,7 +13,8 @@ function App() {
   const [symbolsAllowed, setSymbolsAllowed] = useState(false);
   const [lowerCaseLtAllowed, setLowerCaseLtAllowed] = useState(false);
   const [upperCaseLtAllowed, setUpperCaseLtAllowed] = useState(false);
-  const generatePassword = () => {
+
+ const generatePassword= useCallback(()=>{
     let password = "";
     let str = "abcdefghijklmnopqrstuwwxyzABCDEFGHIJKLMNOPQRSTUWWXYZ";
     if (numberAllowed) str += "0123456789";
@@ -35,7 +36,8 @@ function App() {
       setStrength("Strong")
     }
     setCopyPassword(false);
-  };
+  },[setPassword,length,numberAllowed,symbolsAllowed,lowerCaseLtAllowed,upperCaseLtAllowed])
+  
   useEffect(() => {
     generatePassword();
   }, []);
