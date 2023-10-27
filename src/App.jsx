@@ -7,6 +7,7 @@ function App() {
   const uId = useId();
   const [password, setPassword] = useState();
   const [length, setLength] = useState(8);
+  const [strength, setStrength] = useState();
   const [copyPassword, setCopyPassword] = useState();
   const [numberAllowed, setNumberAllowed] = useState(false);
   const [symbolsAllowed, setSymbolsAllowed] = useState(false);
@@ -24,7 +25,15 @@ function App() {
       password += str.charAt(chr);
     }
     setPassword(password);
-
+    if(password.length<=5){
+      setStrength("Weak")
+    }
+    else if(password.length>=8 && password.length<=15){
+      setStrength("Medium")
+    }
+    else if(password.length>=15){
+      setStrength("Strong")
+    }
     setCopyPassword(false);
   };
   useEffect(() => {
@@ -116,14 +125,17 @@ function App() {
               <label htmlFor={uId}>Include Symbols</label>
             </div>
           </div>
-          <div className="strength">
+          {
+            strength &&  <div className="strength">
             <div className="slider-container">
               <main className="slider-text-container">
                 <h2>Strength</h2>
-                <p>Medium</p>
+                <p>{strength}</p>
               </main>
             </div>
           </div>
+          }
+          
 
           <button className="btn" onClick={generatePassword}>
             Generate{" "}
