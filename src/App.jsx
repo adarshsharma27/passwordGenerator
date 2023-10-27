@@ -62,10 +62,10 @@ function App() {
               disabled
             />
             {copyPassword ? (
-              <FaRegCopy className="copy-clipboard" />
+              <FaRegCopy className="copy-clipboard copy" />
             ) : (
               <FaClipboard
-                className="copy-clipboard"
+                className="copy-clipboard clipboard"
                 onClick={copyToClipboard}
               />
             )}

@@ -118,6 +118,14 @@ p {
   right: 15px;
   cursor: pointer;
 }
+.copy:hover{
+  cursor:not-allowed;
+}
+.clipboard:hover{
+  color: #facc62;
+  cursor: copy;
+  transition: all 0.5s ease-in;
+}
 ::selection{
   background-color: #a4ffaf;
   color:#111016;
