@@ -59,6 +59,7 @@ function App() {
               placeholder="Password"
               value={password}
               ref={ref}
+              disabled
             />
             {copyPassword ? (
               <FaRegCopy className="copy-clipboard" />

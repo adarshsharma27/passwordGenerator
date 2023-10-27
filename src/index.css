@@ -51,9 +51,10 @@ h1 {
   text-align: center;
 }
 h2 {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   line-height: 2.5rem;
   color: #ffff;
+  font-weight: 500;
 }
 
 p {
@@ -62,6 +63,7 @@ p {
   line-height: 2rem;
   padding-top: 0.5rem;
   color: #a4ffaf;
+  font-weight: 600;
 }
 
 .input-selector {
@@ -116,7 +118,11 @@ p {
   right: 15px;
   cursor: pointer;
 }
-
+::selection{
+  background-color: #a4ffaf;
+  color:#111016;
+  text-decoration: none;
+}
 input[type="text"] {
   width: 420px;
   height: 54px;
@@ -130,7 +136,7 @@ input[type="text"] {
   caret-color: #a4ffaf;
   color: #999;
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 .strength {
   width: 100%;
@@ -140,8 +146,15 @@ input[type="text"] {
   padding: 10px 15px;
 }
 .strength h2,
-p {
+.strength p {
   font-size: 1.1rem;
+}
+.strength h2{
+  color: #888;
+}
+.strength p{
+  color: #facc62;
+  font-weight: 600;
 }
 input[type="range"] {
   width: 100%;
